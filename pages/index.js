@@ -5,7 +5,7 @@ const Index = () => {
   return (
     <>
       <Head>
-        <title>Next.js 100</title>
+        <title>Next.js Image Optimization</title>
         <meta name="Description" content="Build an application to explore Next.js 10 image optimization."></meta>
 
         <link rel="icon" href="/favicon.ico" />
@@ -16,7 +16,13 @@ const Index = () => {
         <meta name="theme-color" content="#317EFB"/>
       </Head>
       <div>
-        Next.js image optimization
+        <figcaption>{'Simple <img> tag'}</figcaption>
+        <img
+          src="/img/golden_retriever.jpg"
+          width="720"
+          height="480"
+          alt="Golden Retriever"
+        ></img>
       </div>
     </>
   )
