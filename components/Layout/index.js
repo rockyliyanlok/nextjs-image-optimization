@@ -30,9 +30,9 @@ const Layout = ({
           md={8} mdOffset={2}
           lg={6} lgOffset={3}
         >
-          <Container>
+          <Wrapper>
             {children}
-          </Container>
+          </Wrapper>
         </Col>
       </Row>
     </Container>
