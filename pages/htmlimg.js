@@ -3,13 +3,13 @@ import ImageWrapper from '../components/ImageWrapper'
 import React from 'react'
 import styled from 'styled-components'
 
-const HtmlImg = styled.img`
+const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
 `
 
-const Index = () => {
+const HtmlImg = () => {
   return (
     <>
       <Head>
@@ -19,7 +19,7 @@ const Index = () => {
         const filename = `landscape${('' + (index + 1)).padStart(3, '0')}`
         return (
           <ImageWrapper key={filename}>
-            <HtmlImg 
+            <Image 
               alt={filename}
               src={`/img/${filename}.jpg`}
             />
@@ -30,4 +30,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default HtmlImg
