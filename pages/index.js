@@ -12,7 +12,7 @@ const ImageComponent = ({ filename }) => (
   />
 )
 
-const HtmlImg = () => {
+const Index = () => {
   return (
     <>
       <Head>
@@ -23,4 +23,4 @@ const HtmlImg = () => {
   )
 }
 
-export default HtmlImg
+export default Index
