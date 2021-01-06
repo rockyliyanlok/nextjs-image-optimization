@@ -1,7 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import ImageWrapper from '../components/ImageWrapper'
+import ImageList from '../components/ImageList'
 import React from 'react'
+
+const ImageComponent = ({ filename }) => (
+  <Image 
+    alt={filename}
+    src={`/img/${filename}.jpg`}
+    objectFit="cover"
+    width={1920}
+    height={1080}
+  />
+)
 
 const NextImage = () => {
   return (
@@ -9,19 +19,7 @@ const NextImage = () => {
       <Head>
         <title>Next.js Image Optimization - Next.js Image</title>
       </Head>
-      {[...Array(10).keys()].map(index => {
-        const filename = `landscape${('' + (index + 1)).padStart(3, '0')}`
-        return (
-          <ImageWrapper key={filename}>
-            <Image 
-              alt={filename}
-              src={`/img/${filename}.jpg`}
-              layout="fill"
-              objectFit="cover"
-            />
-          </ImageWrapper>
-        )
-      })}
+      <ImageList ImageComponent={ImageComponent} />
     </>
   )
 }
