@@ -6,6 +6,7 @@ const NextjsImage = ({ filename, ...props }) => (
     objectFit="cover"
     src={`/img/${filename}.jpg`}
     alt={filename}
+    layout={'responsive'}
     {...props}
   />
 )
