@@ -8,7 +8,11 @@ const ImageList = ({ ImageComponent }) => (
       const filename = `landscape${('' + (index + 1)).padStart(3, '0')}`
       return (
         <ImageWrapper key={filename}>
-          <ImageComponent filename={filename} />
+          <ImageComponent
+            filename={filename}
+            width={1920}
+            height={1080}
+          />
         </ImageWrapper>
       )
     })}
