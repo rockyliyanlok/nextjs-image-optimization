@@ -1,26 +1,35 @@
+import {
+  HtmlImg,
+  NextjsImage,
+  OptimizedImage
+} from '../components/ImageComponents'
 import Head from 'next/head'
 import ImageList from '../components/ImageList'
 import React from 'react'
 
-const ImageComponent = ({ filename }) => (
-  <img 
-    className={'width-height--100p object-fit--cover'}
-    alt={filename}
-    src={`/img/${filename}.jpg`}
-    width={1920}
-    height={1080}
-  />
-)
+const Index = ({ plugin }) => {
+  const [subtitle, ImageComponent] = plugin === 'nextjs' ? [
+    'Next.js Image', NextjsImage
+  ] : plugin === 'optimized' ? [
+    'Optimized Image', OptimizedImage
+  ] : [
+    'Html img', HtmlImg
+  ]
 
-const Index = () => {
   return (
     <>
       <Head>
-        <title>Next.js Image Optimization - Html img</title>
+        <title>{`Next.js Image Optimization - ${subtitle}`}</title>
       </Head>
       <ImageList ImageComponent={ImageComponent} />
     </>
   )
+}
+
+Index.getInitialProps = async ({ query }) => {
+  const { plugin } = query
+
+  return { plugin }
 }
 
 export default Index
