@@ -1,4 +1,3 @@
-import Lazyload from 'react-lazyload'
 import React from 'react'
 
 const OptimizedImage = ({ filename, ...props }) => (
